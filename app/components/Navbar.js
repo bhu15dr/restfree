@@ -11,28 +11,29 @@ export default function Navbar() {
           <div className="flex-shrink-0 font-bold text-2xl text-blue-500">RestFree</div>
 
           <div className="hidden md:flex space-x-8">
-            <a href="#hero" className="hover:text-blue-500 transition-colors">
+            {/* Add '/' before the hash to ensure it always scrolls to the section on the home page */}
+            <a href="/#hero" className="hover:text-blue-500 transition-colors">
               Home
             </a>
-            <a href="#problem" className="hover:text-blue-500 transition-colors">
+            <a href="/#problem" className="hover:text-blue-500 transition-colors">
               Problem
             </a>
-            <a href="#solutions" className="hover:text-blue-500 transition-colors">
+            <a href="/#solutions" className="hover:text-blue-500 transition-colors">
               Solutions
             </a>
-            <a href="#features" className="hover:text-blue-500 transition-colors">
+            <a href="/#features" className="hover:text-blue-500 transition-colors">
               Features
             </a>
-            <a href="#partners" className="hover:text-blue-500 transition-colors">
+            <a href="/#partners" className="hover:text-blue-500 transition-colors">
               Partners
             </a>
-            <a href="#pricing" className="hover:text-blue-500 transition-colors">
+            <a href="/#pricing" className="hover:text-blue-500 transition-colors">
               Pricing
             </a>
-            <a href="#testimonials" className="hover:text-blue-500 transition-colors">
+            <a href="/#testimonials" className="hover:text-blue-500 transition-colors">
               Testimonials
             </a>
-            <a href="#download" className="hover:text-blue-500 transition-colors">
+            <a href="/#download" className="hover:text-blue-500 transition-colors">
               Download
             </a>
           </div>
@@ -49,28 +50,29 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#hero" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              {/* Update mobile menu links to the same with '/' before the hash */}
+              <a href="/#hero" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Home
               </a>
-              <a href="#problem" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#problem" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Problem
               </a>
-              <a href="#solutions" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#solutions" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Solutions
               </a>
-              <a href="#features" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#features" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Features
               </a>
-              <a href="#partners" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#partners" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Partners
               </a>
-              <a href="#pricing" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#pricing" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Pricing
               </a>
-              <a href="#testimonials" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#testimonials" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Testimonials
               </a>
-              <a href="#download" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
+              <a href="/#download" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Download
               </a>
             </div>
@@ -80,4 +82,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
