@@ -1,4 +1,8 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 export default function Hero() {
+  const router = useRouter();
   return (
     <section id="hero" className="bg-neutral-900 text-white min-h-screen pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,8 +18,8 @@ export default function Hero() {
               again.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#download"
+              <button
+                onClick={() => router.push("/home")}
                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 inline-flex items-center justify-center"
               >
                 <svg
@@ -25,8 +29,8 @@ export default function Hero() {
                 >
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Download App
-              </a>
+                Get Started
+              </button>
               <a
                 href="#features"
                 className="bg-transparent border-2 border-white hover:border-blue-500 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 inline-flex items-center justify-center"
