@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import PartnerForm from '../pages/partner-form';
+
 export default function Partners() {
     return (
       <section id="partners" className="py-20 bg-neutral-900">
@@ -68,12 +71,17 @@ export default function Partners() {
           </div>
   
           <div className="text-center animate__animated animate__fadeInUp">
-            <a
+            {/* <a
               href="#contact"
               className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105"
             >
               Become a Partner
+            </a> */}
+            <Link href="/partner-form">
+            <a className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105">
+              Become a Partner
             </a>
+          </Link>
           </div>
         </div>
       </section>
