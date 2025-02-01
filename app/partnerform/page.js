@@ -2,8 +2,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import Navbar from "../components/Navbar";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   Form,
@@ -61,6 +62,14 @@ const formSchema = z.object({
 export default function PartnerForm() {
   const router = useRouter();
   const [showPopup, setShowPopup] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
+
+  // Get selected plan when component mounts
+  useEffect(() => {
+    const plan = localStorage.getItem('selectedPlan');
+    setSelectedPlan(plan || '');
+  }, []);
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -84,17 +93,21 @@ export default function PartnerForm() {
   });
 
   function onSubmit(values) {
-    console.log(values);
+    console.log({ ...values, selectedPlan });
     setShowPopup(true);
   }
   function closepopup() {
+    localStorage.removeItem('selectedPlan');
     console.log("closepopup called");
     setShowPopup(false);
     router.push("/");
   }
 
   return (
-    <div className="container mx-auto py-10 sm:w-[50%] ">
+     <>
+      <Navbar />
+       <main id="main-content">
+        <div className="container mx-auto p-8 sm:w-[50%] mt-12">
       <h1 className="text-3xl font-bold text-center mb-6">
         Hotel Partnership Login Form
       </h1>
@@ -281,5 +294,7 @@ export default function PartnerForm() {
         </div>
       )}
     </div>
+      </main>
+    </>
   );
 }

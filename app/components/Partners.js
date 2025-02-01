@@ -105,12 +105,6 @@ export default function Partners() {
         </div>
 
         <div className="text-center animate__animated animate__fadeInUp">
-          {/* <a
-              href="#contact"
-              className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105"
-            >
-              Become a Partner
-            </a> */}
           <Link href="/partnerform">
             <button className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105">
               Become a Partner
