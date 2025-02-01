@@ -92,9 +92,33 @@ export default function PartnerForm() {
     },
   });
 
-  function onSubmit(values) {
+  async function onSubmit(values) {
     console.log({ ...values, selectedPlan });
-    setShowPopup(true);
+    const dataToSend = {
+      ...values,
+      selectedPlan,
+    };
+    try {
+      const response = await fetch("/api/partner", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log("Data saved successfully:", result);
+        setShowPopup(true);
+      } else {
+        console.error("Error saving data:", result.message);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+    // setShowPopup(true);
   }
   function closepopup() {
     localStorage.removeItem('selectedPlan');

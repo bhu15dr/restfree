@@ -18,6 +18,7 @@ const PartnerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Partner = mongoose.models.Partner || mongoose.model("Partner", PartnerSchema);
+// Create a model and specify the collection name as 'userdata'
+const Partner = mongoose.models.Partner || mongoose.model("Partner", PartnerSchema, "userdata");
 
 export default Partner;
