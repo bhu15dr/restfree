@@ -6,6 +6,7 @@ import Features from "./components/Features";
 import Partners from "./components/Partners";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
+// import DigitalBillboard from "./digitalbillboard/page";
 import Download from "./components/Download";
 
 export default function Home() {

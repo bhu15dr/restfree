@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Link from "next/link"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -11,7 +12,6 @@ export default function Navbar() {
           <div className="flex-shrink-0 font-bold text-2xl text-blue-500">RestFree</div>
 
           <div className="hidden md:flex space-x-8">
-            {/* Add '/' before the hash to ensure it always scrolls to the section on the home page */}
             <a href="/#hero" className="hover:text-blue-500 transition-colors">
               Home
             </a>
@@ -30,9 +30,12 @@ export default function Navbar() {
             <a href="/#pricing" className="hover:text-blue-500 transition-colors">
               Pricing
             </a>
-            <a href="/#testimonials" className="hover:text-blue-500 transition-colors">
-              Testimonials
-            </a>
+            <Link 
+              href="/digitalbillboard"
+              className="hover:text-blue-500 transition-colors"
+            >
+              DigitalBillboard
+            </Link>
             <a href="/#download" className="hover:text-blue-500 transition-colors">
               Download
             </a>
@@ -50,7 +53,6 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {/* Update mobile menu links to the same with '/' before the hash */}
               <a href="/#hero" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Home
               </a>
@@ -69,9 +71,12 @@ export default function Navbar() {
               <a href="/#pricing" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Pricing
               </a>
-              <a href="/#testimonials" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
-                Testimonials
-              </a>
+              <Link 
+                href="/digitalbillboard"
+                className="block px-3 py-2 hover:bg-blue-500 rounded-md"
+              >
+                DigitalBillboard
+              </Link>
               <a href="/#download" className="block px-3 py-2 hover:bg-blue-500 rounded-md">
                 Download
               </a>
